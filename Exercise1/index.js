@@ -29,15 +29,6 @@ else if(userAgent.match(/edg/i))
 
 browserVersion = userAgent.split(browserName+'/')[1]
 
-/* Using Array
-const qa = [
-    ["Browser Name", browserName],
-    ["Browser Version", browserVersion],
-    ["Screen Width", screen.width],
-    ["Screen Height",screen.height],
-    ["Page Height", height],
-    ["Page Width",width]];
-*/
 const questionAnswer = {
     "Browser Name": browserName,
     "Browser Version": browserVersion,
@@ -50,26 +41,6 @@ const questionAnswer = {
 var body = document.getElementsByTagName("body")[0];
 var tbl = document.createElement("table");
 var tblBody = document.createElement("tbody");
-
-
-/* Using 2 For loops for 2d array
-for (var i = 0; i < 6; i++) 
-{
-    var row = document.createElement("tr");
-    for (var j = 0; j < 2; j++) 
-    {
-        var cell = document.createElement("td");
-        var cellText = document.createTextNode(qa[i][j]);
-        cell.appendChild(cellText);
-        cell.setAttribute('style','border:1px solid black; border-collapse:collapse; border-color:black ; text-align:center;');
-        row.appendChild(cell);      
-    }
-    tblBody.appendChild(row);
-}
-tbl.setAttribute('style','border:1px solid black; border-collapse:collapse; border-color:black ; text-align:center;');
-tbl.appendChild(tblBody);
-body.appendChild(tbl);
-*/
 
 for(let question in questionAnswer)
 {
