@@ -29,7 +29,7 @@ else if(userAgent.match(/edg/i))
 
 browserVersion = userAgent.split(browserName+'/')[1]
 
-
+/* Using Array
 const qa = [
     ["Browser Name", browserName],
     ["Browser Version", browserVersion],
@@ -37,11 +37,22 @@ const qa = [
     ["Screen Height",screen.height],
     ["Page Height", height],
     ["Page Width",width]];
+*/
+const questionAnswer = {
+    "Browser Name": browserName,
+    "Browser Version": browserVersion,
+    "Screen Width": screen.width,
+    "Screen Height":screen.height,
+    "Page Height": height,
+    "Page Width": width
+};
 
 var body = document.getElementsByTagName("body")[0];
 var tbl = document.createElement("table");
 var tblBody = document.createElement("tbody");
 
+
+/* Using 2 For loops for 2d array
 for (var i = 0; i < 6; i++) 
 {
     var row = document.createElement("tr");
@@ -53,6 +64,27 @@ for (var i = 0; i < 6; i++)
         cell.setAttribute('style','border:1px solid black; border-collapse:collapse; border-color:black ; text-align:center;');
         row.appendChild(cell);      
     }
+    tblBody.appendChild(row);
+}
+tbl.setAttribute('style','border:1px solid black; border-collapse:collapse; border-color:black ; text-align:center;');
+tbl.appendChild(tblBody);
+body.appendChild(tbl);
+*/
+
+for(let question in questionAnswer)
+{
+    var row = document.createElement("tr");
+    var column1 = document.createElement("td");
+    var column1Text = document.createTextNode(question);
+    column1.appendChild(column1Text);
+    column1.setAttribute('style','border:1px solid black; border-collapse:collapse; border-color:black ; text-align:center;');
+    row.appendChild(column1);
+
+    var column2 = document.createElement("td");
+    var column2Text = document.createTextNode(questionAnswer[question]);
+    column2.appendChild(column2Text);
+    column2.setAttribute('style','border:1px solid black; border-collapse:collapse; border-color:black ; text-align:center;');
+    row.appendChild(column2);
     tblBody.appendChild(row);
 }
 tbl.setAttribute('style','border:1px solid black; border-collapse:collapse; border-color:black ; text-align:center;');
