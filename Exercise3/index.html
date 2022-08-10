@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Validation Form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+<div class="container" style="margin: auto; width: 400px; margin-top: 10%;">
+    <form action="index.html" method="post" id="val_form" >
+        <h1>HTML Validation Form</h1>
+        <div class="field">
+            <label>Name: </label>
+            <input type="text" name="fname" id="fname" placeholder="Name">
+            <small></small>
+        </div>
+        <div class="field">
+            <label>Date Of Birth: </label>
+            <input type="text" name="fdob" id="fdob" placeholder="mm-dd-yyyy">
+            <small></small>
+        </div>
+        <div class="field">
+            <label>Gender: </label>
+            <input type="radio" name="sex" value="male" >Male    
+            <input type="radio" name="sex" value="femele">Female   
+        </div>
+        <div><small id="gender"></small></div>
+        <div class="field">
+            <label>Mobile Number: </label>
+            <input type="text" name="mobile" id="mobile" > 
+            <small></small>
+        </div>
+        <div class="field">
+            <input type="submit" name="submit" value="Submit">    
+            <input type="reset" name="reset" value="Reset"> 
+            <small></small>
+        </div>
+    </form>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
