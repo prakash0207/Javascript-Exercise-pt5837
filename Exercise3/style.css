@@ -1,0 +1,69 @@
+input[type=text], select 
+{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+  
+input[type=submit] 
+{
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=reset] 
+{
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+  
+input[type=submit]:hover 
+{
+  background-color: #45a049;
+}
+  
+div 
+{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+.container 
+{
+	background-color: #fff;
+	border-radius: 5px;
+	width: 350px;
+}
+label.radio,
+label.checkbox 
+{
+	width: auto;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	border-radius: 5px;
+}
+
+input.error{
+	border-color: #dc3545;
+}
+
+input.success{
+	border-color: #198754;
+}
