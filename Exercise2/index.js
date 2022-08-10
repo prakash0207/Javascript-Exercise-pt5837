@@ -1,52 +1,26 @@
-function setCookie(cname,cvalue) 
-{  
-    document.cookie = cname + "=" + cvalue + ";" + ";path=/";
-}
-
-function getCookie(cname) 
+function checkCookie() 
 {
+    var name;
+    name = "name";
+    var count;
     var theCookies = document.cookie.split(';');
-    var name = cname + "=";
+    var flag = true;
     for(let i = 0; i < theCookies.length; i++) 
     {
         var singleCookieArray = theCookies[i].split('=');
-        if(singleCookieArray[0] == cname)
+        if(singleCookieArray[0] == name)
         {
-            return(singleCookieArray[1]);
+            count = singleCookieArray[1];
+            flag = false;
+            break;      
         }
     }
-    return "";
-}
-
-function checkCookie() 
-{
-    var browserName;
-    var userAgent = navigator.userAgent;
-    if(userAgent.match(/chrome|chromium|crios/i))
+    if(flag)
     {
-        browserName = "Chrome";
+        count = "";
     }
-    else if(userAgent.match(/firefox|fxios/i))
-    {
-        browserName = "Firefox";
-    }  
-    else if(userAgent.match(/safari/i))
-    {
-        browserName = "Safari";
-    }
-    else if(userAgent.match(/opr\//i))
-    {
-        browserName = "Opera";
-    } 
-    else if(userAgent.match(/edg/i))
-    {
-        browserName = "Edge";
-    }else
-    {
-        browserName="Other";
-    }
-
-    var count = getCookie(browserName);
+    
+   
     if(count != "" && count != null)
     {
         var integerCount = parseInt(count);
@@ -55,8 +29,9 @@ function checkCookie()
     }
     else
     {
+        
         count = "1";
     }
     document.getElementById("cookieCount").innerHTML = "The number of visits are " + count;
-    setCookie(browserName, count);
+    document.cookie = name + "=" + count + ";";
 }
