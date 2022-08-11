@@ -67,7 +67,6 @@ function clickedButton(event)
     const divElement = document.getElementById("detail");
     const listElements = divElement.querySelectorAll("li");
     var whichButton;
-    var coordinates = mouseMove();
     if(event.button == 0)
     {
         whichButton = "Left";
@@ -77,14 +76,19 @@ function clickedButton(event)
         whichButton = "right";
     }
     listElements[3].innerHTML = "Mouse button clicked - " + whichButton;
-    listElements[4].innerHTML = "Left coordinate of the clicked position: " + coordinates[0] + ". top coordinate of the clicked position: " + coordinates[1];
+    
 }
-function mouseMove()
+function clickedPos(event)
 {
+    const divElement = document.getElementById("detail");
+    const listElements = divElement.querySelectorAll("li");
     var coordinates = [];
     coordinates[0] = event.clientX;
     coordinates[1] = event.clientY;
-    return(coordinates);
+    coordinates[2] = event.pageX;
+    coordinates[3] = event.pageY;
+    listElements[4].innerHTML = "Left coordinate of the clicked position(screen): " + coordinates[0] + ". top coordinate of the clicked position(screen): " + coordinates[1];
+    listElements[5].innerHTML = "Left coordinate of the clicked position(scroll): " + coordinates[2] + ". top coordinate of the clicked position(scroll): " + coordinates[3];
 }
 
-window.addEventListener('mousemove', mouseMove);
+document.addEventListener('click', clickedPos);
