@@ -1,0 +1,8 @@
+#slides .slide {
+	display: none;
+  text-align: center;
+}
+
+#slide .slide.active {
+	display: block;
+}
